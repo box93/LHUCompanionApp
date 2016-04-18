@@ -8,7 +8,7 @@ module.exports = {
         connection: {
             host: '127.0.0.1',
             user: 'manager',
-            password: 'Marlin60a',
+            password: 'capstone2016',
             database: 'LHUCompanion'
 
         },

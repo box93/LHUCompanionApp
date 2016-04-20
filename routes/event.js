@@ -12,7 +12,7 @@ var eventCollection = bookshelf.Collection.extend({
 
 eventController
     .route('/:id')
-    .get(check, function(req, res, next){
+    .get( function(req, res, next){
         Event.query({where: {eventId: req.params.id}})
             .fetch()
             .then(function(event){
@@ -20,7 +20,7 @@ eventController
             });
 
     })
-    .put(check, function( req, res, next){
+    .put(function( req, res, next){
         Event.forge({eventId: req.params.id})
             .fetch({require: true})
             .then(function(event){
@@ -37,7 +37,7 @@ eventController
                 })
             });
     })
-    .delete(check, function(req, res, next){
+    .delete( function(req, res, next){
         new Event({eventId: req.params.id})
             .destroy()
             .then(function(event){
